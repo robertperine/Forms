@@ -25,6 +25,8 @@
   |__less/
       |__app.less
 
+```
+
 ## License
 (The MIT License)
 
