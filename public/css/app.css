@@ -1,48 +1,153 @@
+.btn-login-facebook {
+  background-color: #3b5998;
+  color: #FFF;
+  border-radius: 0;
+  border: none;
+  padding: 10px;
+  text-decoration: none;
+  text-align: center;
+  margin: 10px;
+}
+.btn-login-facebook:hover,
+.btn-login-facebook:visited,
+.btn-login-facebook:link,
+.btn-login-facebook:active {
+  text-decoration: none;
+  color: #FFF;
+}
+.btn-login-twitter {
+  background-color: #00aced;
+  color: #FFF;
+  border-radius: 0;
+  border: none;
+  padding: 10px;
+  text-decoration: none;
+  text-align: center;
+  margin: 10px;
+}
+.btn-login-twitter:hover,
+.btn-login-twitter:visited,
+.btn-login-twitter:link,
+.btn-login-twitter:active {
+  text-decoration: none;
+  color: #FFF;
+}
+.btn-login-google {
+  background-color: #dd4b39;
+  color: #FFF;
+  border-radius: 0;
+  border: none;
+  padding: 10px;
+  text-decoration: none;
+  text-align: center;
+  margin: 10px;
+}
+.btn-login-google:hover,
+.btn-login-google:visited,
+.btn-login-google:link,
+.btn-login-google:active {
+  text-decoration: none;
+  color: #FFF;
+}
+.btn-login-local {
+  background-color: #1abc9c;
+  color: #FFF;
+  border-radius: 0;
+  border: none;
+  padding: 10px;
+  text-decoration: none;
+  text-align: center;
+  margin: 10px;
+}
+.btn-login-local:hover,
+.btn-login-local:visited,
+.btn-login-local:link,
+.btn-login-local:active {
+  text-decoration: none;
+  color: #FFF;
+}
 body {
   padding-top: 60px;
 }
-
+.center {
+  text-align: center;
+}
+.author {
+  color: #aaa;
+}
+a.tag {
+  margin: 0 10px 0 0;
+}
+.article,
+.comment {
+  padding: 15px 0;
+  border-top: 1px solid #e8e8e8;
+}
+.btn {
+  outline: none !important;
+  border-radius: 0;
+}
+.error {
+  color: #FF2602;
+}
 .date {
   font-size: 11px;
   color: #aaa;
 }
-
-.author {
-  color: #aaa;
+.tags {
+  margin-top: 10px;
 }
-
+.main-head {
+  text-align: center;
+  padding: 20px;
+}
 .title {
   padding: 5px 0 15px 0;
   display: block;
   font-size: 24px;
 }
-
-.article, .comment {
-  padding: 15px 0;
-  border-top: 1px solid #e8e8e8;
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"] {
+  border-width: 2px;
+  border-color: #FFF;
+  box-shadow: none;
+  border-radius: 0px;
+}
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus {
+  border-radius: 0px;
+  border-color: #1abc9c;
+  border-color: #1abc9c;
+  border-width: 2px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
 }
 
-.main-head {
-  text-align: center;
-  padding: 20px;
-}
-
-.btn {
-  outline: none !important;
-}
-
-.center {
-  text-align: center;
-}
-
-.tags {
-  margin-top: 10px;
-}
-
-a.tag {
-  margin: 0 10px 0 0;
-}
-
-.error {
-  color: #FF2602;
-}
+/* This beautiful CSS-File has been crafted with LESS (lesscss.org) and compiled by simpLESS (wearekiss.com/simpless) */

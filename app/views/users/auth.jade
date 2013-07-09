@@ -4,22 +4,24 @@ block main
   h1= title
 
 block content
-  .row
-    .offset1.span5
-      a(href="/auth/facebook")
-        img(src="/img/facebook.png")
-      a(href="/auth/github")
-        img(src="/img/github.png")
-      a(href="/auth/twitter")
-        img(src="/img/twitter.png")
-      a(href="/auth/google")
-        img(src="/img/google.png")
-    .span6
-      if (typeof errors !== 'undefined')
-        .fade.in.alert.alert-block.alert-error
-          a.close(data-dismiss="alert", href="javascript:void(0)") x
-          ul
-            each error in errors
-              li= error.type
+  .well
+    .row
+      .offset1.span4
+        p
+          a.span3.btn-login-facebook(href="/auth/facebook") login with facebook
+            img(src="/img/gly/facebook.png") 
+        p
+          a.span3.btn-login-twitter(href="/auth/twitter") login with twitter
+            img(src="/img/gly/twitter.png")
+        p
+          a.span3.btn-login-google(href="/auth/google") login with google
+            img(src="/img/gly/google+.png") 
+      .span3
+        if (typeof errors !== 'undefined')
+          .fade.in.alert.alert-block.alert-error
+            a.close(data-dismiss="alert", href="javascript:void(0)") x
+            ul
+              each error in errors
+                li= error.type
 
-      block auth
+        block auth

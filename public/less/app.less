@@ -1,0 +1,111 @@
+@facebook-login: #3B5998;
+@twitter-login: #00ACED;
+@google-login: #DD4B39;
+@local-login: #1ABC9C;
+@text-border: #1ABC9C;
+@well-color: #F5F5F5;
+
+.login-button (@social: #ff0000) {
+    background-color: @social;
+    color: #FFF;
+    border-radius: 0;
+    border: none;
+    padding: 10px;
+    text-decoration: none;
+    text-align: center;
+    margin: 10px;
+    
+    &:hover, &:visited, &:link, &:active {
+            text-decoration: none;
+            color: #FFF;
+    }
+}
+
+.btn-login-facebook {
+    .login-button(@facebook-login);
+}
+.btn-login-twitter {
+    .login-button(@twitter-login);
+}
+.btn-login-google {
+    .login-button(@google-login);
+}
+.btn-login-local {
+    .login-button(@local-login);
+}
+
+body {
+    padding-top: 60px;
+}
+.center {
+    text-align: center;
+}
+.author {
+    color: #aaa;
+}
+a.tag {
+    margin: 0 10px 0 0;
+}
+.article, .comment {
+    padding: 15px 0;
+    border-top: 1px solid #e8e8e8;
+}
+.btn {
+    outline: none !important;
+    border-radius: 0;
+}
+.error {
+    color: #FF2602;
+}
+.date {
+    font-size: 11px;
+    color: #aaa;
+}
+.tags {
+    margin-top: 10px;
+}
+.main-head {
+    text-align: center;
+    padding: 20px;
+}
+.title {
+    padding: 5px 0 15px 0;
+    display: block;
+    font-size: 24px;
+}
+
+.input-border(@border-shadow-color: @text-border) {
+    border-radius: 0px;
+    border-color: @border-shadow-color;
+    border-color: #1abc9c;
+    border-width: 2px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"]
+ {
+    border-width: 2px;
+    border-color: #FFF;
+    box-shadow: none;
+    border-radius: 0px;
+    &:focus {
+        .input-border(@text-border);
+    }
+    
+}

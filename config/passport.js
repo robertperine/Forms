@@ -5,6 +5,7 @@ var mongoose = require('mongoose')
   , FacebookStrategy = require('passport-facebook').Strategy
   , GitHubStrategy = require('passport-github').Strategy
   , GoogleStrategy = require('passport-google-oauth').Strategy
+  , LinkedinStrategy = require('passport-linkedin').Strategy
   , User = mongoose.model('User')
 
 
@@ -55,7 +56,6 @@ module.exports = function (passport, config) {
               name: profile.displayName
             , username: profile.username
             , provider: 'twitter'
-            , twitter: profile._json
           })
           user.save(function (err) {
             if (err) console.log(err)
@@ -84,7 +84,6 @@ module.exports = function (passport, config) {
             , email: profile.emails[0].value
             , username: profile.username
             , provider: 'facebook'
-            , facebook: profile._json
           })
           user.save(function (err) {
             if (err) console.log(err)
@@ -112,7 +111,6 @@ module.exports = function (passport, config) {
             , email: profile.emails[0].value
             , username: profile.username
             , provider: 'github'
-            , github: profile._json
           })
           user.save(function (err) {
             if (err) console.log(err)
@@ -139,8 +137,8 @@ module.exports = function (passport, config) {
             , email: profile.emails[0].value
             , username: profile.username
             , provider: 'google'
-            , google: profile._json
           })
+          console.log(user)
           user.save(function (err) {
             if (err) console.log(err)
             return done(err, user)
@@ -151,4 +149,32 @@ module.exports = function (passport, config) {
       })
     }
   ));
+
+  // use linkedin strategy
+  passport.use(new LinkedinStrategy({
+    consumerKey: config.linkedin.clientID,
+    consumerSecret: config.linkedin.clientSecret,
+    callbackURL: config.linkedin.callbackURL
+    },
+    function(accessToken, refreshToken, profile, done) {
+      User.findOne({ 'linkedin.id': profile.id }, function (err, user) {
+        console.log(profile)
+        if (!user) {
+          user = new User({
+            name: profile.displayName
+          , email: profile.email-address
+          , username: profile.username
+          , provider: 'linkedin'
+          })
+          console.log(user)
+          user.save(function (err) {
+            if (err) console.log(err)
+            return done(err, user)
+          })
+        } else {
+          return done(err, user)
+        }
+      })
+    }
+    ));
 }

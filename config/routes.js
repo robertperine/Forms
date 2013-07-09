@@ -19,6 +19,8 @@ module.exports = function (app, passport, auth) {
   app.get('/auth/twitter/callback', passport.authenticate('twitter', { failureRedirect: '/login' }), users.authCallback)
   app.get('/auth/google', passport.authenticate('google', { failureRedirect: '/login', scope: 'https://www.google.com/m8/feeds' }), users.signin)
   app.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/login', scope: 'https://www.google.com/m8/feeds' }), users.authCallback)
+  app.get('/auth/linkedin', passport.authenticate('linkedin', { scope: ['r_fullprofile', 'r_emailaddress'] }), users.signin)
+  app.get('/auth/linkedin/callback', passport.authenticate('linkedin', { scope: ['r_fullprofile', 'r_emailaddress'] }), users.authCallback)
 
   app.param('userId', users.user)
 
